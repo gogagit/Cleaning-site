@@ -20,6 +20,10 @@
     <section class="guard-card" id="employeeGuard"><i class="fas fa-spinner fa-spin"></i><h2>Проверяем рабочий доступ</h2><p>Эта страница доступна только сотрудникам сервиса.</p></section>
   </div></main>
   <div class="style-switcher js-style-switcher"><button class="style-switcher-toggler js-style-switcher-toggler" type="button" aria-label="Настройки оформления" aria-expanded="false"><i class="fas fa-cog"></i></button><div class="style-switcher-main"><h2>Оформление</h2><div class="style-switcher-item"><p>Цвет темы</p><div class="theme-color"><input type="range" min="0" max="360" class="hue-slider js-hue-slider" aria-label="Цвет темы"><div class="hue">Тон: <span class="js-hue"></span></div></div></div><div class="style-switcher-item"><label class="form-switcher"><span>Тёмная тема</span><input type="checkbox" class="js-dark-mode"><div class="box"></div></label></div></div></div>
-  <script src="JS/config.js"></script><script src="JS/app-data.js"></script><script src="JS/employee.js"></script><script src="JS/style-switcher.js"></script>
+  <script src="JS/config.js"></script><script src="JS/units/constants.js"></script><script src="JS/units/helpers.js"></script><script src="JS/units/router.js"></script>
+  <script src="JS/models/DBManager.js"></script><script src="JS/models/UserModel.js"></script><script src="JS/models/ServiceModel.js"></script><script src="JS/models/OrderModel.js"></script><script src="JS/models/MessageModel.js"></script>
+  <script src="JS/controllers/UserController.js"></script><script src="JS/controllers/ServiceController.js"></script><script src="JS/controllers/OrderController.js"></script><script src="JS/controllers/MessageController.js"></script>
+  <script src="JS/views/NotificationView.js"></script><script src="JS/views/OrderView.js"></script><script src="JS/views/EmployeeView.js"></script>
+  <script src="JS/app.js"></script><script src="JS/controllers/EmployeeController.js"></script><script src="JS/controllers/ThemeController.js"></script>
 </body>
 </html>

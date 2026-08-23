@@ -9,24 +9,15 @@
     const status = document.getElementById("clientStatus");
     const messagesContainer = document.getElementById("clientMessages");
     const supportStatus = document.getElementById("supportStatus");
-    const statusNames = { new: "Новый", confirmed: "Подтверждён", assigned: "Назначен специалист", in_progress: "Выполняется", completed: "Завершён", cancelled: "Отменён" };
-    const currency = (value) => new Intl.NumberFormat("ru-RU").format(Math.round(Number(value) || 0)) + " ₽";
-    const dateTime = (value) => {
-        const date = new Date(value);
-        return Number.isNaN(date.getTime()) ? "—" : new Intl.DateTimeFormat("ru-RU", { day: "2-digit", month: "long", year: "numeric", hour: "2-digit", minute: "2-digit" }).format(date);
-    };
+    const statusNames = window.ClientView.statuses;
+    const currency = (value) => window.ClientView.currency(value);
+    const dateTime = (value) => window.ClientView.dateTime(value, { longMonth: true });
     const setStatus = (message, type = "") => {
         status.textContent = message;
         status.classList.remove("is-success", "is-error");
         if (type) status.classList.add(type);
     };
-    const addText = (parent, tag, className, text) => {
-        const node = document.createElement(tag);
-        if (className) node.className = className;
-        node.textContent = text;
-        parent.appendChild(node);
-        return node;
-    };
+    const addText = (parent, tag, className, text) => window.ClientView.appendText(parent, tag, className, text);
     const redirectForRole = (user) => {
         if (!user) { window.location.replace("Index.html?login=1"); return true; }
         if (user.role === "admin") { window.location.replace("admin.html"); return true; }
@@ -66,7 +57,7 @@
         const heading = document.createElement("div"); heading.className = "support-thread-heading";
         const title = document.createElement("div");
         addText(title, "strong", "", "Обращение от " + dateTime(message.createdAt));
-        addText(title, "span", "", message.status === "answered" ? "Администратор ответил" : "Ожидает ответа");
+        addText(title, "span", "", message.status === "answered" ? "Администратор ответил" : window.MessageView.statusLabel(message.status));
         heading.appendChild(title); thread.appendChild(heading);
         const chat = document.createElement("div"); chat.className = "chat-messages";
         const initial = document.createElement("div"); initial.className = "chat-bubble is-client";

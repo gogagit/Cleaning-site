@@ -9,9 +9,9 @@
     const statusNames = { assigned: "Назначен", in_progress: "Выполняется", completed: "Завершён", confirmed: "Подтверждён", cancelled: "Отменён" };
     let orders = [];
 
-    const currency = (value) => new Intl.NumberFormat("ru-RU").format(Math.round(Number(value) || 0)) + " ₽";
+    const currency = (value) => window.EmployeeView.currency(value);
     const setStatus = (message, type = "") => { status.textContent = message; status.classList.remove("is-success", "is-error"); if (type) status.classList.add(type); };
-    const addText = (parent, tag, className, text) => { const node = document.createElement(tag); if (className) node.className = className; node.textContent = text; parent.appendChild(node); return node; };
+    const addText = (parent, tag, className, text) => window.EmployeeView.appendText(parent, tag, className, text);
     const redirectForRole = (user) => {
         if (!user) { window.location.replace("Index.html?login=1"); return true; }
         if (user.role === "admin") { window.location.replace("admin.html"); return true; }

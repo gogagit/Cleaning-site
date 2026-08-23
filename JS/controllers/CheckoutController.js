@@ -15,7 +15,7 @@
     let draftTimer;
     let availabilityRequest = 0;
 
-    const currency = (value) => new Intl.NumberFormat("ru-RU").format(Math.round(Number(value) || 0)) + " ₽";
+    const currency = (value) => window.CheckoutView.currency(value);
     const setStatus = (message, type = "") => {
         status.textContent = message;
         status.classList.remove("is-success", "is-error");
@@ -101,7 +101,7 @@
             checks.forEach(({ option, availability }) => {
                 const count = availability.availableEmployees;
                 option.disabled = count < 1;
-                option.textContent = (option.dataset.label || option.value) + (count > 0 ? " · свободно: " + count : " · все заняты");
+                option.textContent = (option.dataset.label || option.value) + " · " + window.ScheduleView.availabilityText(count);
                 if (count > 0) availableSlots += 1;
             });
             if (timeField.selectedOptions[0]?.disabled) timeField.value = "";

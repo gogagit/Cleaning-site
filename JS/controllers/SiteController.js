@@ -1,14 +1,8 @@
 "use strict";
 
-const formatPrice = (value) => new Intl.NumberFormat("ru-RU").format(Math.round(Number(value) || 0)) + " ₽";
-
-const appendTextElement = (parent, tagName, className, textValue) => {
-    const element = document.createElement(tagName);
-    if (className) element.className = className;
-    element.textContent = textValue;
-    parent.appendChild(element);
-    return element;
-};
+const formatPrice = (value) => window.SiteView.formatPrice(value);
+const appendTextElement = (parent, tagName, className, textValue) =>
+    window.SiteView.appendText(parent, tagName, className, textValue);
 
 window.addEventListener("load", () => {
     const preloader = document.querySelector(".js-preloader");

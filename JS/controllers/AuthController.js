@@ -29,22 +29,11 @@
     const feedbackSubmit = document.getElementById("feedbackSubmit");
     if (!data || !overlay || !accountButton) return;
 
-    const roleInfo = {
-        user: { label: "Клиент", href: "account.html", action: "Открыть личный кабинет" },
-        employee: { label: "Сотрудник", href: "employee.html", action: "Открыть кабинет сотрудника" },
-        admin: { label: "Администратор", href: "admin.html", action: "Открыть панель администратора" }
-    };
+    const roleInfo = window.AuthView.roles;
     let closeTimer;
 
-    const setStatus = (element, message, type = "") => {
-        if (!element) return;
-        element.textContent = message;
-        element.classList.remove("is-success", "is-error");
-        if (type) element.classList.add(type);
-    };
-    const setBusy = (element, busy) => {
-        element?.querySelectorAll("button, input").forEach((control) => { control.disabled = busy; });
-    };
+    const setStatus = (element, message, type = "") => window.AuthView.setStatus(element, message, type);
+    const setBusy = (element, busy) => window.AuthView.setBusy(element, busy);
 
     const switchAuthTab = (tab) => {
         const showLogin = tab === "login";

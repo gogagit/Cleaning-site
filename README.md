@@ -91,13 +91,54 @@ employeeSharePercent: 70
 
 После заполнения конфигурации данные пользователей, заказов, расписания и сообщений хранятся в Supabase/PostgreSQL. Сессией авторизации управляет клиент Supabase, а доступ к таблицам ограничивают политики RLS из `supabase/schema.sql`.
 
-## Основные файлы
+## MVC-структура проекта
 
-- `JS/main.js` — публичный калькулятор и переход к оформлению;
-- `JS/checkout.js` — проверка роли и создание заказа;
-- `JS/account-page.js` — кабинет клиента;
-- `JS/employee.js` — кабинет сотрудника;
-- `JS/admin.js` — административная панель;
-- `JS/app-data.js` — единый локальный/Supabase слой данных;
-- `JS/account.js` — авторизация на главной и обратная связь;
-- `supabase/schema.sql` — таблицы, индексы, триггеры и RLS.
+Клиентский код разделён на модели, представления и контроллеры. Файл `JS/app.js` создаёт экземпляры моделей и предоставляет контроллерам единый фасад данных.
+
+```text
+JS/
+├── app.js
+├── config.js
+├── controllers/
+│   ├── AdminController.js
+│   ├── AuthController.js
+│   ├── CheckoutController.js
+│   ├── ClientController.js
+│   ├── EmployeeController.js
+│   ├── MessageController.js
+│   ├── OrderController.js
+│   ├── ServiceController.js
+│   ├── SiteController.js
+│   ├── ThemeController.js
+│   └── UserController.js
+├── models/
+│   ├── DBManager.js
+│   ├── UserModel.js
+│   ├── ServiceModel.js
+│   ├── OrderModel.js
+│   └── MessageModel.js
+├── views/
+│   ├── AdminView.js
+│   ├── AuthView.js
+│   ├── CheckoutView.js
+│   ├── ClientView.js
+│   ├── EmployeeView.js
+│   ├── MessageView.js
+│   ├── NotificationView.js
+│   ├── OrderView.js
+│   ├── ScheduleView.js
+│   └── SiteView.js
+├── units/
+│   ├── constants.js
+│   ├── helpers.js
+│   └── router.js
+└── vendor/
+    └── aos.js
+```
+
+- `models/DBManager.js` инкапсулирует локальное хранилище, подключение Supabase и общие правила доступа;
+- модели предметной области предоставляют операции с пользователями, услугами, заказами и сообщениями;
+- представления содержат форматирование и повторно используемую логику отображения;
+- контроллеры обрабатывают действия на соответствующих страницах и связывают HTML-представления с моделями;
+- `units` содержит константы, общие функции и маршрутизацию по ролям;
+- `supabase/schema.sql` содержит таблицы, индексы, триггеры и политики RLS.

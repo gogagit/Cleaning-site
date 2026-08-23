@@ -178,7 +178,11 @@
         document.head.appendChild(script);
     });
 
-    class CleaningData {
+    /**
+     * Низкоуровневый менеджер данных приложения.
+     * Инкапсулирует localStorage, Supabase и правила доступа к данным.
+     */
+    class DBManager {
         constructor() {
             this.mode = "local";
             this.client = null;
@@ -1074,6 +1078,5 @@
     });
 
     window.CLEANING_DEFAULT_SERVICES = clone(defaultServices);
-    window.cleaningData = new CleaningData();
-    window.cleaningDataReady = window.cleaningData.init();
+    window.DBManager = DBManager;
 })();

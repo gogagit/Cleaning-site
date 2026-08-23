@@ -29,38 +29,16 @@
 
     if (!data || !overlay) return;
 
-    const orderStatuses = {
-        new: "Новый",
-        confirmed: "Подтверждён",
-        assigned: "Назначен специалист",
-        in_progress: "Выполняется",
-        completed: "Завершён",
-        cancelled: "Отменён"
-    };
-    const messageStatuses = { new: "Ожидает ответа", read: "Прочитано", answered: "Есть ответ" };
+    const orderStatuses = window.AdminView.statuses;
+    const messageStatuses = window.MessageView.statuses;
     let snapshot = { orders: [], services: [], profiles: [], employees: [], messages: [], invites: [] };
     let closeTimer;
     let detailTimer;
     let rendering = false;
 
-    const escapeHtml = (value) => String(value ?? "")
-        .replaceAll("&", "&amp;")
-        .replaceAll("<", "&lt;")
-        .replaceAll(">", "&gt;")
-        .replaceAll('"', "&quot;")
-        .replaceAll("'", "&#039;");
-    const currency = (value) => new Intl.NumberFormat("ru-RU").format(Math.round(Number(value) || 0)) + " ₽";
-    const dateTime = (value) => {
-        const date = new Date(value);
-        if (Number.isNaN(date.getTime())) return "—";
-        return new Intl.DateTimeFormat("ru-RU", {
-            day: "2-digit",
-            month: "2-digit",
-            year: "numeric",
-            hour: "2-digit",
-            minute: "2-digit"
-        }).format(date);
-    };
+    const escapeHtml = (value) => window.AdminView.escapeHtml(value);
+    const currency = (value) => window.AdminView.currency(value);
+    const dateTime = (value) => window.AdminView.dateTime(value);
 
     const setStatus = (message, type = "") => {
         status.textContent = message;
