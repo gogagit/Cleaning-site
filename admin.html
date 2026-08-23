@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="Панель администратора сервиса «Убирайся!»."><title>Панель администратора — Убирайся!</title>
+  <link type="text/css" rel="stylesheet" href="css/fontawesome.min.css"><link type="text/css" rel="stylesheet" href="css/style.css">
+</head>
+<body class="dashboard-page" data-page="admin">
+  <div class="admin-overlay admin-page-overlay" id="adminOverlay">
+    <section class="admin-panel" aria-labelledby="adminTitle">
+      <header class="admin-header">
+        <div><span class="cart-kicker">Управление сервисом</span><h1 id="adminTitle" tabindex="-1">Панель администратора</h1><span class="admin-mode" id="adminMode">Локальный режим</span></div>
+        <div class="admin-header-actions">
+          <button type="button" class="btn btn-secondary admin-action-button" id="adminRefresh"><i class="fas fa-sync-alt"></i> Обновить</button>
+          <button type="button" class="btn btn-secondary admin-action-button" id="adminExport"><i class="fas fa-download"></i> Экспорт</button>
+          <label class="btn btn-secondary admin-action-button" for="adminImport"><i class="fas fa-upload"></i> Импорт<input id="adminImport" type="file" accept="application/json,.json" hidden></label>
+          <button type="button" class="btn btn-secondary admin-action-button" id="adminLogout"><i class="fas fa-sign-out-alt"></i> Выйти</button>
+          <a class="icon-button" id="adminClose" href="Index.html" aria-label="На главную"><i class="fas fa-times"></i></a>
+        </div>
+      </header>
+      <div class="admin-body">
+        <div class="admin-stats" id="adminStats"></div>
+        <div class="finance-note"><i class="fas fa-percentage"></i><div><strong>Финансовая модель</strong><span id="financeSplit">30% — комиссия сервиса, 70% — заработок сотрудника</span></div></div>
+        <div class="admin-tabs" role="tablist">
+          <button type="button" class="admin-tab is-active" data-admin-tab="orders">Заказы <span id="ordersBadge">0</span></button>
+          <button type="button" class="admin-tab" data-admin-tab="schedule">Расписание <span id="scheduleBadge">0</span></button>
+          <button type="button" class="admin-tab" data-admin-tab="services">Услуги <span id="servicesBadge">0</span></button>
+          <button type="button" class="admin-tab" data-admin-tab="users">Пользователи <span id="usersBadge">0</span></button>
+          <button type="button" class="admin-tab" data-admin-tab="messages">Сообщения <span id="messagesBadge">0</span></button>
+        </div>
+        <section class="admin-tab-panel" data-admin-panel="orders"><div class="admin-table-wrap" id="adminOrders"></div></section>
+        <section class="admin-tab-panel is-hidden" data-admin-panel="schedule"><div class="admin-schedule" id="adminSchedule"></div></section>
+        <section class="admin-tab-panel is-hidden" data-admin-panel="services">
+          <div class="admin-service-layout">
+            <form class="admin-service-form" id="adminServiceForm">
+              <span class="checkout-kicker">Редактор услуги</span><h2 id="serviceFormTitle">Добавить услугу</h2><input type="hidden" id="adminServiceOriginalId">
+              <div class="form-row"><div class="input-box"><label for="adminServiceId">Код</label><input class="input-control" id="adminServiceId" required pattern="[A-Za-z0-9_-]+"></div><div class="input-box"><label for="adminServiceName">Название</label><input class="input-control" id="adminServiceName" required></div></div>
+              <div class="form-row"><div class="input-box"><label for="adminServiceRate">Цена за м²</label><input class="input-control" id="adminServiceRate" type="number" min="0" required></div><div class="input-box"><label for="adminServiceMinimum">Минимальная цена</label><input class="input-control" id="adminServiceMinimum" type="number" min="0" required></div></div>
+              <div class="form-row"><div class="input-box"><label for="adminServiceSpeed">Скорость, м²/ч</label><input class="input-control" id="adminServiceSpeed" type="number" min="1" required></div><div class="input-box"><label for="adminServiceSort">Порядок</label><input class="input-control" id="adminServiceSort" type="number" min="0" value="100"></div></div>
+              <div class="input-box"><label for="adminServiceDescription">Описание</label><textarea class="input-control" id="adminServiceDescription" required></textarea></div>
+              <label class="consent-field"><input type="checkbox" id="adminServiceActive" checked><span>Показывать услугу на сайте</span></label>
+              <div class="form-actions"><button type="submit" class="btn">Сохранить</button><button type="button" class="text-button" id="adminServiceCancel">Сбросить</button></div>
+            </form>
+            <div class="admin-service-list" id="adminServices"></div>
+          </div>
+        </section>
+        <section class="admin-tab-panel is-hidden" data-admin-panel="users">
+          <div class="admin-user-layout">
+            <form class="admin-service-form admin-employee-form" id="adminEmployeeForm">
+              <span class="checkout-kicker">Новый сотрудник</span><h2>Создать или пригласить</h2>
+              <p class="admin-form-note" id="employeeFormNote">В локальном режиме сотрудник сможет сразу войти по временному паролю.</p>
+              <div class="input-box"><label for="employeeNameInput">Имя и фамилия</label><input class="input-control" id="employeeNameInput" name="name" required minlength="2" placeholder="Например, Ольга Миронова"></div>
+              <div class="input-box"><label for="employeeEmailInput">Электронная почта</label><input class="input-control" id="employeeEmailInput" name="email" type="email" required placeholder="employee@example.ru"></div>
+              <div class="input-box" id="employeePasswordBox"><label for="employeePasswordInput">Временный пароль</label><input class="input-control" id="employeePasswordInput" name="password" type="password" minlength="8" required placeholder="Минимум 8 символов"><small class="field-hint">Передайте пароль сотруднику безопасным способом.</small></div>
+              <button type="submit" class="btn">Создать сотрудника</button>
+            </form>
+            <div><div class="admin-table-wrap" id="adminUsers"></div><div class="staff-invites" id="adminInvites"></div></div>
+          </div>
+        </section>
+        <section class="admin-tab-panel is-hidden" data-admin-panel="messages"><div class="admin-message-list" id="adminMessages"></div></section>
+        <p class="form-status admin-status" id="adminStatus" role="status"></p>
+      </div>
+    </section>
+  </div>
+  <div class="admin-detail-overlay" id="adminDetailOverlay" hidden><section class="admin-detail-modal" role="dialog" aria-modal="true" aria-labelledby="adminDetailTitle"><div class="admin-detail-header"><h2 id="adminDetailTitle">Детали заказа</h2><button type="button" class="icon-button" id="adminDetailClose" aria-label="Закрыть детали"><i class="fas fa-times"></i></button></div><div id="adminDetailContent"></div></section></div>
+  <script src="JS/config.js"></script><script src="JS/app-data.js"></script><script src="JS/admin.js"></script>
+</body>
+</html>

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Оформление заказа на уборку в сервисе «Убирайся!».">
+  <title>Оформление заказа — Убирайся!</title>
+  <link type="text/css" rel="stylesheet" href="css/fontawesome.min.css">
+  <link type="text/css" rel="stylesheet" href="css/style-switcher.css">
+  <link type="text/css" rel="stylesheet" href="css/style.css">
+</head>
+<body class="inner-page checkout-page" data-page="checkout">
+  <header class="inner-header">
+    <div class="container inner-header-content">
+      <a class="inner-logo" href="Index.html">Убирайся! <span>клининговый сервис</span></a>
+      <nav class="inner-nav" aria-label="Навигация оформления"><a href="Index.html#calculator"><i class="fas fa-arrow-left"></i> Изменить расчёт</a><a href="account.html">Мои заказы</a></nav>
+    </div>
+  </header>
+
+  <main class="inner-main">
+    <div class="container">
+      <div class="page-heading">
+        <span class="title">Оформление</span>
+        <h1>Подтвердите детали заказа</h1>
+        <p>Расчёт уже перенесён. Укажите адрес, дату и контакты — после отправки заказ появится в личном кабинете.</p>
+      </div>
+      <ol class="checkout-steps" aria-label="Этапы заказа"><li class="is-complete"><span>1</span> Расчёт</li><li class="is-active"><span>2</span> Оформление</li><li><span>3</span> Подтверждение</li></ol>
+
+      <div class="checkout-page-layout" id="checkoutContent" hidden>
+        <aside class="page-order-summary">
+          <span class="checkout-kicker">Ваш расчёт</span>
+          <h2 id="summaryService">Уборка</h2>
+          <dl class="summary-details" id="summaryDetails"></dl>
+          <div class="checkout-total"><span>Предварительно</span><strong id="summaryTotal">0 ₽</strong></div>
+          <p>Итоговую цену менеджер подтвердит после уточнения состояния помещения.</p>
+          <a class="text-button" href="Index.html#calculator">Изменить параметры</a>
+        </aside>
+
+        <section class="checkout-form-card">
+          <div class="section-card-heading"><span class="checkout-kicker">Контактные данные</span><h2>Куда и когда приехать?</h2></div>
+          <form id="checkoutForm">
+            <div class="form-row">
+              <div class="input-box"><label for="requestName">Имя</label><input id="requestName" name="name" type="text" class="input-control" required minlength="2" autocomplete="name"></div>
+              <div class="input-box"><label for="requestPhone">Телефон</label><input id="requestPhone" name="phone" type="tel" placeholder="+7 (___) ___-__-__" class="input-control" required autocomplete="tel"></div>
+            </div>
+            <div class="form-row">
+              <div class="input-box"><label for="requestEmail">Электронная почта</label><input id="requestEmail" name="email" type="email" class="input-control" required autocomplete="email"></div>
+              <div class="input-box"><label for="requestAddress">Адрес уборки</label><input id="requestAddress" name="address" type="text" placeholder="Улица, дом, квартира или офис" class="input-control" required autocomplete="street-address"></div>
+            </div>
+            <div class="form-row">
+              <div class="input-box"><label for="requestDate">Дата уборки</label><input id="requestDate" name="date" type="date" class="input-control" required></div>
+              <div class="input-box"><label for="requestTime">Время начала</label><select id="requestTime" name="time" class="input-control" required><option value="">Сначала выберите дату</option><option value="09:00" data-label="09:00">09:00</option><option value="12:00" data-label="12:00">12:00</option><option value="15:00" data-label="15:00">15:00</option><option value="18:00" data-label="18:00">18:00</option></select><small class="field-hint">Занятые интервалы будут недоступны автоматически.</small></div>
+            </div>
+            <div class="slot-availability" id="slotAvailabilityStatus" role="status"><i class="far fa-calendar-check"></i><span>Выберите дату — покажем свободные интервалы.</span></div>
+            <div class="input-box"><label for="requestPayment">Оплата</label><select id="requestPayment" name="payment" class="input-control" required><option value="card">Картой после уборки</option><option value="cash">Наличными после уборки</option></select></div>
+            <div class="input-box"><label for="requestMessage">Комментарий <span class="optional-label">необязательно</span></label><textarea id="requestMessage" name="message" class="input-control" placeholder="Домофон, парковка, особенности помещения или пожелания"></textarea></div>
+            <label class="consent-field"><input type="checkbox" name="consent" value="accepted" required><span>Согласен на обработку данных для оформления заказа</span></label>
+            <div class="form-actions"><button type="submit" class="btn" id="submitOrder">Оформить заказ</button><button type="button" class="text-button" id="clearDraft">Очистить поля</button></div>
+            <p class="form-status" id="formStatus" role="status"></p>
+          </form>
+        </section>
+      </div>
+
+      <section class="guard-card" id="checkoutGuard"><i class="fas fa-spinner fa-spin"></i><h2>Проверяем доступ</h2><p>Страница оформления доступна только авторизованным клиентам.</p></section>
+    </div>
+  </main>
+
+  <div class="confirmation-overlay" id="confirmationOverlay" hidden>
+    <section class="confirmation-modal" role="dialog" aria-modal="true" aria-labelledby="confirmationTitle">
+      <div class="confirmation-icon"><i class="fas fa-check"></i></div><span class="cart-kicker">Заказ оформлен</span>
+      <h2 id="confirmationTitle" tabindex="-1">Спасибо! Заявка принята</h2><p>Номер вашего заказа</p>
+      <strong class="confirmation-number" id="confirmationOrderNumber">—</strong>
+      <div class="confirmation-details" id="confirmationDetails"></div>
+      <a class="btn" href="account.html">Перейти к моим заказам</a><a class="text-button confirmation-home-link" href="Index.html">На главную</a>
+    </section>
+  </div>
+
+  <div class="style-switcher js-style-switcher">
+    <button class="style-switcher-toggler js-style-switcher-toggler" type="button" aria-label="Настройки оформления" aria-expanded="false"><i class="fas fa-cog"></i></button>
+    <div class="style-switcher-main"><h2>Оформление</h2><div class="style-switcher-item"><p>Цвет темы</p><div class="theme-color"><input type="range" min="0" max="360" class="hue-slider js-hue-slider" aria-label="Цвет темы"><div class="hue">Тон: <span class="js-hue"></span></div></div></div><div class="style-switcher-item"><label class="form-switcher"><span>Тёмная тема</span><input type="checkbox" class="js-dark-mode"><div class="box"></div></label></div></div>
+  </div>
+  <script src="JS/config.js"></script><script src="JS/app-data.js"></script><script src="JS/checkout.js"></script><script src="JS/style-switcher.js"></script>
+</body>
+</html>

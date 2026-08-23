@@ -1,332 +1,293 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
-  <title>Cleaning Service </title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link type="text/css" rel="stylesheet" href="css/fontawesome.min.css" />
-  <link type="text/css" rel="stylesheet" href="css/aos.css" />
-  <link type="text/css" rel="stylesheet" href="css/style-switcher.css" />
-  <link type="text/css" rel="stylesheet" href="css/style.css" />
+  <meta name="description" content="Убирайся! — уборка квартир, домов и офисов с понятным предварительным расчётом стоимости.">
+  <title>Убирайся! — профессиональная уборка</title>
+  <link type="text/css" rel="stylesheet" href="css/fontawesome.min.css">
+  <link type="text/css" rel="stylesheet" href="css/aos.css">
+  <link type="text/css" rel="stylesheet" href="css/style-switcher.css">
+  <link type="text/css" rel="stylesheet" href="css/style.css">
 </head>
 <body>
-<!-- preloader start -->
-<div class="preloader js-preloader">
-  <div></div>
-</div>
-<!-- preloader end -->
-<!-- page wrapper start-->
+<div class="preloader js-preloader" aria-hidden="true"><div></div></div>
+
 <div class="page-wrapper">
-<!-- Header start-->
-<header class="header js-header">
-<div class="container">
-  <div class="logo" data-aos="fade-down" data-aos-duration="1000">
-    <a href="#">tolmol <span>cleaning service</span></a>
-  </div>
-  <button class="nav-toggler js-nav-toggler"data-aos="fade-down" data-aos-duration="1000">
-    <span></span>
-  </button>
-  <nav class="nav js-nav">
-    <ul data-aos="fade-down" data-aos-duration="1000">
-      <li><a href="#home">home</a></li>
-      <li><a href="#about">about</a></li>
-      <li><a href="#services">services</a></li>
-      <li><a href="#pricing">pricing</a></li>
-      <li><a href="#team">team</a></li>
-      <li><a href="#contact">contact</a></li>
-    </ul>
-  </nav>
-</div>
-</header>
-<!-- header end -->
-<!-- home selection start -->
-<section class="home" id="home" >
-  <div class="container">
-    <div class="grid">
-      <div class="home-text">
-        <h1 data-aos="fade-up" data-aos-duration="1000">need cleaning sevices ?</h1>
-        <p data-aos="fade-up" data-aos-duration="1000" data-aos-delay="150">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Repellendus veritatis tenetur recusandae quam, facilis magnam.</p>
-        <div class="btn-wrap" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="300">
-          <a href="#about" class="btn">know more</a>
-        </div>
+  <header class="header js-header">
+    <div class="container">
+      <div class="logo" data-aos="fade-down" data-aos-duration="800">
+        <a href="#home">Убирайся! <span>клининговый сервис</span></a>
       </div>
-      <div class="home-img">
-        <div class="circle-wrap"data-aos="fade-right" data-aos-duration="1000">
-          <div class="circle"></div>
-        </div>
-        <img src="img/home-img.png" alt="img" data-aos="fade-left" data-aos-duration="1000">
-      </div>
+      <button class="nav-toggler js-nav-toggler" type="button" aria-label="Открыть меню" aria-expanded="false"><span></span></button>
+      <nav class="nav js-nav" aria-label="Основная навигация">
+        <ul data-aos="fade-down" data-aos-duration="800">
+          <li><a href="#home">Главная</a></li>
+          <li><a href="#about">О нас</a></li>
+          <li><a href="#services">Услуги</a></li>
+          <li><a href="#calculator">Калькулятор</a></li>
+          <li><a href="#pricing">Тарифы</a></li>
+          <li><a href="#team">Команда</a></li>
+          <li><a href="#feedback">Вопросы</a></li>
+          <li><button type="button" class="nav-account-button" id="accountButton"><i class="far fa-user"></i><span id="accountLabel">Войти</span></button></li>
+        </ul>
+      </nav>
     </div>
-  </div>
-</section>
-<!-- home selection end -->
-<!-- about section start -->
-<section class="about sectiont-padding" id="about">
-  <div class="conrainer">
-    <div class="grid">
-      <div class="about-img">
-        <div class="img-box" data-aos="zoom-in" data-aos-duration="1000">
-          <img src="img/about-img.png" alt="img">
-          <div class="box box-1">
-            <span>2.5k</span>
-            <p>satisfied clients</p>
+  </header>
+
+  <main>
+    <section class="home" id="home">
+      <div class="container">
+        <div class="grid">
+          <div class="home-text">
+            <p class="eyebrow" data-aos="fade-up" data-aos-duration="800">Уборка без лишних забот</p>
+            <h1 data-aos="fade-up" data-aos-duration="800">Чистый дом начинается с одного расчёта</h1>
+            <p data-aos="fade-up" data-aos-duration="800" data-aos-delay="100">Подберём формат уборки для квартиры, дома или офиса. Вы заранее видите состав работ и предварительную стоимость.</p>
+            <div class="btn-wrap home-actions" data-aos="fade-up" data-aos-duration="800" data-aos-delay="200">
+              <a href="#calculator" class="btn">Рассчитать стоимость</a>
+              <a href="#services" class="btn btn-secondary">Посмотреть услуги</a>
+            </div>
+            <ul class="home-benefits" data-aos="fade-up" data-aos-duration="800" data-aos-delay="300">
+              <li><i class="fas fa-check"></i> Понятный чек-лист работ</li>
+              <li><i class="fas fa-check"></i> Свои средства и инвентарь</li>
+              <li><i class="fas fa-check"></i> Удобная дата и время выезда</li>
+            </ul>
+          </div>
+          <div class="home-img">
+            <div class="circle-wrap" data-aos="fade-right" data-aos-duration="800"><div class="circle"></div></div>
+            <img src="img/home-img.png" alt="Специалист клинингового сервиса" data-aos="fade-left" data-aos-duration="800">
           </div>
         </div>
       </div>
-      <div class="about-text">
+    </section>
+
+    <section class="about section-padding" id="about">
+      <div class="container">
+        <div class="grid">
+          <div class="about-img">
+            <div class="img-box" data-aos="zoom-in" data-aos-duration="800">
+              <img src="img/about-img.png" alt="Сотрудница сервиса «Убирайся!» с инвентарём">
+              <div class="box box-1"><span>100%</span><p>понятный расчёт</p></div>
+            </div>
+          </div>
+          <div class="about-text">
+            <div class="section-title">
+              <span class="title" data-aos="fade-up" data-aos-duration="600">О сервисе</span>
+              <h2 class="sub-title" data-aos="fade-up" data-aos-duration="600">Уборка по согласованному чек-листу</h2>
+            </div>
+            <p data-aos="fade-up" data-aos-duration="600">«Убирайся!» помогает освободить время для важных дел. Перед выездом мы фиксируем тип уборки, площадь и дополнительные задачи, чтобы состав работ был понятен заранее.</p>
+            <p data-aos="fade-up" data-aos-duration="600">Для каждого заказа формируется индивидуальный расчёт. Итоговая стоимость подтверждается после уточнения состояния помещения и пожеланий клиента.</p>
+            <div class="about-points" data-aos="fade-up" data-aos-duration="600">
+              <div><strong>01</strong><span>Вы выбираете услугу</span></div>
+              <div><strong>02</strong><span>Мы уточняем детали</span></div>
+              <div><strong>03</strong><span>Команда выполняет уборку</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="service section-padding" id="services">
+      <div class="container">
         <div class="section-title">
-          <span class="title" data-aos="fade-up" data-aos-duration="600">about us</span>
-          <h2 class="sub-title" data-aos="fade-up" data-aos-duration="600"> we're cleaning since 2008</h2>
+          <span class="title" data-aos="fade-up" data-aos-duration="600">Услуги</span>
+          <h2 class="sub-title" data-aos="fade-up" data-aos-duration="600">Выберите подходящий вид уборки</h2>
+          <p class="section-description">Стоимость зависит от площади и дополнительных задач. Нажмите «Рассчитать», чтобы сразу перейти к калькулятору.</p>
         </div>
-        <p data-aos="fade-up" data-aos-duration="600">Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore ipsum quam voluptas quisquam nihil temporibus itaque. Ad fuga quod cupiditate?</p>
-        <p data-aos="fade-up" data-aos-duration="600">Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus tempore earum ad quibusdam? Aperiam temporibus, eveniet eos mollitia quaerat autem?</p>
-      </div>
-    </div>
-  </div>
-</section>
-<!-- about section end -->
-<!-- service section start -->
-<section class="service section-padding" id="servise">
-  <div class="container">
-    <div class="section-title">
-      <span class="title" data-aos="fade-up" data-aos-duration="600">service</span>
-      <h2 class="sub-title" data-aos="fade-up" data-aos-duration="600">what we do</h2>
-    </div>
-    <div class="grid">
-      <div class="services-item"data-aos="fade-up" data-aos-duration="600" >
-        <div class="img-box">
-          <img src="img/service/house.jpg" alt="carpet">
-        </div>
-        <h3>carpet cleaning</h3>
-      </div>
-      <div class="services-item" data-aos="fade-up" data-aos-duration="600" data-aos-delay="100">
-        <div class="img-box">
-          <img src="img/service/window.jpg" alt="window">
-        </div>
-        <h3>window cleaning</h3>
-      </div>
-      <div class="services-item" data-aos="fade-up" data-aos-duration="600" data-aos-delay="200">
-        <div class="img-box">
-          <img src="img/service/bathroom.jpg" alt="bathroom">
-        </div>
-        <h3>bathroom cleaning</h3>
-      </div>
-      <div class="services-item"data-aos="fade-up" data-aos-duration="600" data-aos-delay="300">
-        <div class="img-box">
-          <img src="img/service/furniture.png" alt="">
-        </div>
-        <h3>furniture cleaning</h3>
-      </div>
-    </div>
-  </div>
-</section>
-<!-- service section end -->
-<!-- pricing section start -->
-<section class="pricing section-padding">
-  <div class="container">
-    <div class="section-title" >
-      <span class="title"data-aos="fade-up" data-aos-duration="600">pricing</span>
-      <h2 class="sub-title"data-aos="fade-up" data-aos-duration="600">our pricing plan</h2>
-    </div>
-    <div class="grid">
-      <!-- Basic plan start -->
-      <div class="pricing-item" data-aos="fade-up" data-aos-duration="1000">
-        <div class="pricing-header">
-          <h3>basic</h3>
-          <div class="price"><span>$299</span> monthly</div>
-        </div>
-        <div class="pricing-body">
-          <ul>
-            <li><i class="fas fa-check"></i>window cleaning</li>
-            <li><i class="fas fa-check"></i>carpet cleaning</li>
-            <li><i class="fas fa-times"></i>furniture cleaning</li>
-            <li><i class="fas fa-times"></i>car cleaning</li>
-            <li><i class="fas fa-times"></i>bathroom cleaning</li>
-          </ul>
-        </div>
-        <div class="pricing-footer">
-          <a href="#" class="btn">get started</a>
+        <div class="grid services-grid" id="servicesGrid">
+          <article class="services-item" data-aos="fade-up" data-aos-duration="600">
+            <div class="img-box"><img src="img/service/house.jpg" alt="Поддерживающая уборка квартиры"></div>
+            <h3>Поддерживающая</h3><p>Регулярная уборка жилых комнат, кухни и санузла.</p><strong class="service-price">от 2 500 ₽</strong>
+            <button type="button" class="service-link js-service-select" data-service="regular">Рассчитать</button>
+          </article>
+          <article class="services-item" data-aos="fade-up" data-aos-duration="600" data-aos-delay="100">
+            <div class="img-box"><img src="img/service/bathroom.jpg" alt="Генеральная уборка помещения"></div>
+            <h3>Генеральная</h3><p>Глубокая очистка поверхностей и труднодоступных мест.</p><strong class="service-price">от 5 200 ₽</strong>
+            <button type="button" class="service-link js-service-select" data-service="general">Рассчитать</button>
+          </article>
+          <article class="services-item" data-aos="fade-up" data-aos-duration="600" data-aos-delay="200">
+            <div class="img-box"><img src="img/service/window.jpg" alt="Уборка помещения после ремонта"></div>
+            <h3>После ремонта</h3><p>Удаление строительной пыли, следов смесей и загрязнений.</p><strong class="service-price">от 7 500 ₽</strong>
+            <button type="button" class="service-link js-service-select" data-service="afterRepair">Рассчитать</button>
+          </article>
+          <article class="services-item" data-aos="fade-up" data-aos-duration="600" data-aos-delay="300">
+            <div class="img-box"><img src="img/service/furniture.png" alt="Уборка офисного помещения"></div>
+            <h3>Уборка офиса</h3><p>Разовая или регулярная уборка рабочих помещений.</p><strong class="service-price">от 3 500 ₽</strong>
+            <button type="button" class="service-link js-service-select" data-service="office">Рассчитать</button>
+          </article>
         </div>
       </div>
-      <!-- Basic plan end -->
-      <!-- Standart plan start -->
-      <div class="pricing-item"data-aos="fade-up" data-aos-duration="1000" data-aos-delay="100">
-        <div class="pricing-header">
-          <h3>standart</h3>
-          <div class="price"><span>$499</span> monthly</div>
+    </section>
+
+    <section class="calculator section-padding" id="calculator">
+      <div class="container">
+        <div class="section-title">
+          <span class="title" data-aos="fade-up" data-aos-duration="600">Калькулятор</span>
+          <h2 class="sub-title" data-aos="fade-up" data-aos-duration="600">Предварительный расчёт стоимости</h2>
+          <p class="section-description" data-aos="fade-up" data-aos-duration="600">Настройте параметры — результат обновится автоматически.</p>
         </div>
-        <div class="pricing-body">
-          <ul>
-            <li><i class="fas fa-check"></i>window cleaning</li>
-            <li><i class="fas fa-check"></i>carpet cleaning</li>
-            <li><i class="fas fa-check"></i>furniture cleaning</li>
-            <li><i class="fas fa-check"></i>car cleaning</li>
-            <li><i class="fas fa-times"></i>bathroom cleaning</li>
-          </ul>
-        </div>
-        <div class="pricing-footer">
-          <a href="#" class="btn">get started</a>
-        </div>
-      </div>
-      <!-- Standart plan end -->
-      <!-- premium plan start -->
-      <div class="pricing-item"data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">
-        <div class="pricing-header">
-          <h3>premium</h3>
-          <div class="price"><span>$899</span> monthly</div>
-        </div>
-        <div class="pricing-body">
-          <ul>
-            <li><i class="fas fa-check"></i>window cleaning</li>
-            <li><i class="fas fa-check"></i>carpet cleaning</li>
-            <li><i class="fas fa-check"></i>furniture cleaning</li>
-            <li><i class="fas fa-check"></i>car cleaning</li>
-            <li><i class="fas fa-check"></i>bathroom cleaning</li>
-          </ul>
-        </div>
-        <div class="pricing-footer">
-          <a href="#" class="btn">get started</a>
-        </div>
-      </div>
-      <!-- premium plan end -->
-    </div>
-  </div>
-</section>
-<!-- pricing section end -->
-<!-- team section start -->
-<section class="team section-padding" id="team">
-  <div class="container">
-    <div class="section-title">
-      <span class="title"data-aos="fade-up" data-aos-duration="600">team</span>
-      <h2 class="sub-title"data-aos="fade-up" data-aos-duration="600">meat our team</h2>
-    </div>
-    <div class="grid">
-      <!-- team item start -->
-      <div class="team-item"data-aos="fade-up" data-aos-duration="1000">
-        <div class="img-box">
-          <img src="img/team/1.png" alt="#">
-        </div>
-        <div class="detail">
-          <h3>john doe</h3>
-          <p>team lead</p>
+        <div class="calculator-layout" data-aos="fade-up" data-aos-duration="700">
+          <form class="calculator-form" id="priceCalculator">
+            <div class="calculator-field calculator-field-wide">
+              <label for="serviceType">Вид уборки</label>
+              <select id="serviceType" class="input-control"><option value="regular">Поддерживающая уборка</option><option value="general">Генеральная уборка</option><option value="afterRepair">Уборка после ремонта</option><option value="office">Уборка офиса</option></select>
+            </div>
+            <div class="calculator-field calculator-field-wide">
+              <div class="field-heading"><label for="areaRange">Площадь помещения</label><div class="area-value"><input id="areaInput" type="number" min="20" max="300" value="50" aria-label="Площадь в квадратных метрах"> м²</div></div>
+              <input id="areaRange" class="area-range" type="range" min="20" max="300" value="50" step="1">
+              <div class="range-labels"><span>20 м²</span><span>300 м²</span></div>
+            </div>
+            <div class="calculator-field">
+              <label for="bathrooms">Количество санузлов</label>
+              <select id="bathrooms" class="input-control"><option value="1">1 санузел</option><option value="2">2 санузла</option><option value="3">3 санузла</option><option value="4">4 санузла</option></select>
+            </div>
+            <div class="calculator-field">
+              <label for="frequency">Периодичность</label>
+              <select id="frequency" class="input-control"><option value="once">Разовая уборка</option><option value="weekly">Каждую неделю — скидка 15%</option><option value="twiceMonth">Два раза в месяц — скидка 10%</option><option value="monthly">Раз в месяц — скидка 5%</option></select>
+            </div>
+            <fieldset class="calculator-field calculator-field-wide extras-field">
+              <legend>Дополнительные услуги</legend>
+              <div class="extras-grid">
+                <label class="check-card"><input type="checkbox" name="extras" value="windows" data-price="1500"><span><strong>Мойка окон</strong><small>+1 500 ₽</small></span></label>
+                <label class="check-card"><input type="checkbox" name="extras" value="sofa" data-price="1800"><span><strong>Химчистка дивана</strong><small>+1 800 ₽</small></span></label>
+                <label class="check-card"><input type="checkbox" name="extras" value="oven" data-price="700"><span><strong>Духовой шкаф</strong><small>+700 ₽</small></span></label>
+                <label class="check-card"><input type="checkbox" name="extras" value="fridge" data-price="600"><span><strong>Холодильник</strong><small>+600 ₽</small></span></label>
+              </div>
+            </fieldset>
+          </form>
+          <aside class="calculator-result" aria-live="polite">
+            <p class="result-label">Предварительная стоимость</p><div class="result-price" id="resultPrice">0 ₽</div>
+            <p class="result-duration"><i class="far fa-clock"></i> Ориентировочно: <strong id="resultDuration">—</strong></p>
+            <dl class="result-breakdown"><div><dt>Основные работы</dt><dd id="basePrice">0 ₽</dd></div><div><dt>Санузлы</dt><dd id="bathroomPrice">0 ₽</dd></div><div><dt>Дополнительно</dt><dd id="extrasPrice">0 ₽</dd></div><div class="discount-row" id="discountRow"><dt>Скидка</dt><dd id="discountPrice">−0 ₽</dd></div></dl>
+            <p class="result-note">Расчёт предварительный. Финальную цену подтвердит менеджер после уточнения деталей.</p>
+            <button type="button" class="btn result-button" id="goToCheckout"><i class="fas fa-arrow-right"></i> Перейти к оформлению</button>
+            <p class="form-status calculator-action-status" id="calculatorActionStatus" role="status"></p>
+          </aside>
         </div>
       </div>
-      <!-- team item end -->
-      <!-- team item start -->
-      <div class="team-item"data-aos="fade-up" data-aos-duration="1000" data-aos-delay="100">
-        <div class="img-box">
-          <img src="img/team/2.png" alt="#">
-        </div>
-        <div class="detail">
-          <h3>john doe</h3>
-          <p>car cleaner</p>
-        </div>
-      </div>
-      <!-- team item end -->
-      <!-- team item start -->
-      <div class="team-item"data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">
-        <div class="img-box">
-          <img src="img/team/3.png" alt="#">
-        </div>
-        <div class="detail">
-          <h3>john doe</h3>
-          <p>cleaner</p>
-        </div>
-      </div>
-      <!-- team item end -->
-    </div>
-  </div>
-</section>
-<!-- team section end -->
-<!-- contact section start -->
-<section class="contact section-padding" id="contact">
-  <div class="container">
-    <div class="section-title">
-      <span class="title"data-aos="fade-up" data-aos-duration="600">contact</span>
-      <h2 class="sub-title"data-aos="fade-up" data-aos-duration="600">have any questions ?</h2>
-    </div>
-    <div class="grid contact-grid">
-      <div class="contact-info">
-        <div class="contact-info-item"data-aos="fade-up" data-aos-duration="600">
-          <i class="fas fa-map-marker-alt"></i>
-          <h3>addres</h3>
-          <p>block-a, sec-75, sarita vihar, new delhi</p>
-        </div>
-        <div class="contact-info-item"data-aos="fade-up" data-aos-duration="600">
-          <i class="fas fa-phone"></i>
-          <h3>call us</h3>
-          <p>91 9654 293 ***</p>
-        </div>
-        <div class="contact-info-item"data-aos="fade-up" data-aos-duration="600">
-          <i class="fas fa-envelope"></i>
-          <h3>email us </h3>
-          <p>info@gmail.com</p>
+    </section>
+
+    <section class="pricing section-padding" id="pricing">
+      <div class="container">
+        <div class="section-title"><span class="title" data-aos="fade-up" data-aos-duration="600">Тарифы</span><h2 class="sub-title" data-aos="fade-up" data-aos-duration="600">Популярные варианты</h2></div>
+        <div class="grid">
+          <article class="pricing-item" data-aos="fade-up" data-aos-duration="800">
+            <div class="pricing-header"><h3>Экспресс</h3><div class="price"><span>2 990 ₽</span>до 40 м²</div></div>
+            <div class="pricing-body"><ul><li><i class="fas fa-check"></i>Полы и открытые поверхности</li><li><i class="fas fa-check"></i>Кухня снаружи</li><li><i class="fas fa-check"></i>Один санузел</li><li><i class="fas fa-times"></i>Внутри шкафов</li></ul></div>
+            <div class="pricing-footer"><button type="button" class="btn js-plan-select" data-service="regular" data-area="40">Выбрать</button></div>
+          </article>
+          <article class="pricing-item pricing-item-featured" data-aos="fade-up" data-aos-duration="800" data-aos-delay="100">
+            <span class="popular-badge">Популярный</span>
+            <div class="pricing-header"><h3>Генеральный</h3><div class="price"><span>5 990 ₽</span>до 60 м²</div></div>
+            <div class="pricing-body"><ul><li><i class="fas fa-check"></i>Глубокая уборка комнат</li><li><i class="fas fa-check"></i>Кухня и техника снаружи</li><li><i class="fas fa-check"></i>До двух санузлов</li><li><i class="fas fa-check"></i>Труднодоступные места</li></ul></div>
+            <div class="pricing-footer"><button type="button" class="btn js-plan-select" data-service="general" data-area="60">Выбрать</button></div>
+          </article>
+          <article class="pricing-item" data-aos="fade-up" data-aos-duration="800" data-aos-delay="200">
+            <div class="pricing-header"><h3>После ремонта</h3><div class="price"><span>8 750 ₽</span>до 50 м²</div></div>
+            <div class="pricing-body"><ul><li><i class="fas fa-check"></i>Удаление строительной пыли</li><li><i class="fas fa-check"></i>Очистка пола и стен</li><li><i class="fas fa-check"></i>Мойка дверей и плинтусов</li><li><i class="fas fa-check"></i>Сбор и упаковка мусора</li></ul></div>
+            <div class="pricing-footer"><button type="button" class="btn js-plan-select" data-service="afterRepair" data-area="50">Выбрать</button></div>
+          </article>
         </div>
       </div>
-      <div class="contact-form"data-aos="fade-up" data-aos-duration="600">
-      <form>
-        <div class="input-box">
-          <input type="text" placeholder="Name" class="input-control" required>
+    </section>
+
+    <section class="team section-padding" id="team">
+      <div class="container">
+        <div class="section-title"><span class="title" data-aos="fade-up" data-aos-duration="600">Команда</span><h2 class="sub-title" data-aos="fade-up" data-aos-duration="600">Специалисты сервиса</h2></div>
+        <div class="grid">
+          <article class="team-item" data-aos="fade-up" data-aos-duration="800"><div class="img-box"><img src="img/team/1.png" alt="Анна, координатор заказов"></div><div class="detail"><h3>Анна Смирнова</h3><p>Координатор заказов</p></div></article>
+          <article class="team-item" data-aos="fade-up" data-aos-duration="800" data-aos-delay="100"><div class="img-box"><img src="img/team/2.png" alt="Мария, старший специалист"></div><div class="detail"><h3>Мария Волкова</h3><p>Старший специалист</p></div></article>
+          <article class="team-item" data-aos="fade-up" data-aos-duration="800" data-aos-delay="200"><div class="img-box"><img src="img/team/3.png" alt="Алексей, мастер химчистки"></div><div class="detail"><h3>Алексей Орлов</h3><p>Мастер химчистки</p></div></article>
         </div>
-        <div class="input-box">
-          <input type="text" placeholder="Email" class="input-control" required>
+      </div>
+    </section>
+
+    <section class="feedback section-padding" id="feedback">
+      <div class="container">
+        <div class="section-title"><span class="title" data-aos="fade-up" data-aos-duration="600">Обратная связь</span><h2 class="sub-title" data-aos="fade-up" data-aos-duration="600">Остались вопросы?</h2><p class="section-description" data-aos="fade-up" data-aos-duration="600">Напишите нам — обращение появится в панели менеджера. В локальном режиме оно сохраняется на этом устройстве.</p></div>
+        <div class="feedback-layout">
+          <div class="feedback-copy" data-aos="fade-up" data-aos-duration="600">
+            <span class="feedback-icon"><i class="far fa-comment-dots"></i></span>
+            <h3>Поможем подобрать уборку</h3>
+            <p>Уточним состав работ, регулярность, подготовку помещения и дополнительные услуги.</p>
+            <ul><li><i class="fas fa-check"></i> Ответ по указанной почте или телефону</li><li><i class="fas fa-check"></i> Обращение получает статус обработки</li><li><i class="fas fa-check"></i> Данные доступны администратору</li></ul>
+          </div>
+          <form class="feedback-form" id="feedbackForm" data-aos="fade-up" data-aos-duration="600">
+            <div class="form-row">
+              <div class="input-box"><label for="feedbackName">Имя</label><input id="feedbackName" name="name" class="input-control" type="text" required minlength="2" autocomplete="name"></div>
+              <div class="input-box"><label for="feedbackEmail">Электронная почта</label><input id="feedbackEmail" name="email" class="input-control" type="email" required autocomplete="email"></div>
+            </div>
+            <div class="input-box"><label for="feedbackPhone">Телефон <span class="optional-label">необязательно</span></label><input id="feedbackPhone" name="phone" class="input-control" type="tel" autocomplete="tel"></div>
+            <div class="input-box"><label for="feedbackMessage">Сообщение</label><textarea id="feedbackMessage" name="message" class="input-control" required minlength="10" placeholder="Опишите вопрос минимум в 10 символах"></textarea></div>
+            <button type="submit" class="btn" id="feedbackSubmit">Отправить сообщение</button>
+            <p class="form-status" id="feedbackStatus" role="status"></p>
+          </form>
         </div>
-        <div class="input-box">
-          <input type="text" placeholder="Phone" class="input-control" required>
-        </div>
-        <div class="input-box">
-          <textarea placeholder="Message" class="input-control" required></textarea>
-        </div>
-        <div class="btn-wrap"data-aos="fade-up" data-aos-duration="600">
-          <button type="submit" class="btn">Send message</button>
-        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container"><a class="footer-logo" href="#home">Убирайся!</a><p>Клининговый сервис с понятным расчётом стоимости</p><div class="footer-links"><a href="#services">Услуги</a><a href="#calculator">Калькулятор</a><a href="checkout.html">Оформление</a><a href="#feedback">Обратная связь</a></div></div>
+  </footer>
+</div>
+
+<div class="auth-overlay" id="authOverlay" hidden>
+  <section class="auth-modal" role="dialog" aria-modal="true" aria-labelledby="authTitle">
+    <button type="button" class="icon-button auth-close" id="authClose" aria-label="Закрыть личный кабинет"><i class="fas fa-times"></i></button>
+    <div class="auth-guest-view" id="authGuestView">
+      <span class="cart-kicker">Личный кабинет</span>
+      <h2 id="authTitle" tabindex="-1">Вход и регистрация</h2>
+      <div class="auth-mode" id="authMode">Локальный режим</div>
+      <div class="auth-tabs" role="tablist">
+        <button type="button" class="auth-tab is-active" id="loginTab" role="tab" aria-selected="true">Вход</button>
+        <button type="button" class="auth-tab" id="registerTab" role="tab" aria-selected="false">Регистрация</button>
+      </div>
+      <form id="loginForm" class="auth-form">
+        <div class="input-box"><label for="loginEmail">Электронная почта</label><input id="loginEmail" name="email" class="input-control" type="email" required autocomplete="email"></div>
+        <div class="input-box"><label for="loginPassword">Пароль</label><input id="loginPassword" name="password" class="input-control" type="password" required minlength="6" autocomplete="current-password"></div>
+        <button type="submit" class="btn">Войти</button>
       </form>
+      <form id="registerForm" class="auth-form is-hidden">
+        <p class="auth-form-intro">Заполните три поля. После регистрации вы сразу попадёте в личный кабинет.</p>
+        <div class="input-box"><label for="registerName">Имя <span class="field-requirement">минимум 2 символа</span></label><input id="registerName" name="name" class="input-control" type="text" required minlength="2" maxlength="40" autocomplete="name" placeholder="Например, Иван" aria-describedby="registerNameHint"><small class="field-hint" id="registerNameHint">Можно использовать русские или латинские буквы.</small></div>
+        <div class="input-box"><label for="registerEmail">Электронная почта <span class="field-requirement">в формате name@mail.ru</span></label><input id="registerEmail" name="email" class="input-control" type="email" required autocomplete="email" placeholder="name@example.ru" aria-describedby="registerEmailHint"><small class="field-hint" id="registerEmailHint">Эта почта будет использоваться для входа.</small></div>
+        <div class="input-box"><label for="registerPassword">Пароль <span class="field-requirement">минимум 8 символов</span></label><input id="registerPassword" name="password" class="input-control" type="password" required minlength="8" autocomplete="new-password" placeholder="Не менее 8 символов" aria-describedby="registerPasswordHint"><small class="field-hint" id="registerPasswordHint">Используйте буквы и цифры; пароль никому не показывается.</small></div>
+        <button type="submit" class="btn">Создать аккаунт</button>
+      </form>
+      <div class="demo-login-grid" id="demoCredentials">
+        <div class="demo-credentials"><strong>Демо-клиент</strong><span>client@chistodom.local</span><span>Пароль: Client123!</span><button type="button" class="text-button" id="demoClientLogin">Войти клиентом</button></div>
+        <div class="demo-credentials"><strong>Демо-сотрудник</strong><span>employee@chistodom.local</span><span>Пароль: Employee123!</span><button type="button" class="text-button" id="demoEmployeeLogin">Войти сотрудником</button></div>
+        <div class="demo-credentials"><strong>Демо-администратор</strong><span>admin@chistodom.local</span><span>Пароль: Admin123!</span><button type="button" class="text-button" id="demoAdminLogin">Войти администратором</button></div>
       </div>
+      <p class="form-status" id="authStatus" role="status"></p>
     </div>
-  </div>
-</section>
-<!-- contact section end -->
-<!-- footer start -->
-<footer class="footer">
-  <div class="container">
-    <h3>Follow us</h3>
-    <div class="social-links">
-      <a href="#" title="facebook"><i class="fab fa-facebook-f"></i></a>
-      <a href="#" title="twitter"><i class="fab fa-twitter"></i></a>
-      <a href="#" title="instagram"><i class="fab fa-instagram"></i></a>
-      <a href="#" title="youtube"><i class="fab fa-youtube"></i></a>
+    <div class="account-view is-hidden" id="accountView">
+      <span class="cart-kicker">Личный кабинет</span>
+      <div class="account-profile">
+        <div class="account-avatar" id="accountAvatar">К</div>
+        <div><h2 id="accountName">Клиент</h2><p id="accountEmail">—</p><div class="account-badges"><span id="accountRole">Клиент</span><span id="accountMode">Локальный режим</span></div></div>
+      </div>
+      <div class="account-actions"><a class="btn" id="roleDashboardLink" href="account.html"><i class="fas fa-arrow-right"></i> Открыть личный кабинет</a><button type="button" class="text-button" id="logoutButton"><i class="fas fa-sign-out-alt"></i> Выйти</button></div>
+      <p class="form-status" id="accountStatus" role="status"></p>
     </div>
-  </div>
-</footer>
-<!-- footer end -->
+  </section>
 </div>
-<!-- page wrapper end-->
-<!-- style switcher start -->
+
 <div class="style-switcher js-style-switcher">
-  <button class="style-switcher-toggler js-style-switcher-toggler">
-    <i class="fas fa-cog"></i>
-  </button>
+  <button class="style-switcher-toggler js-style-switcher-toggler" type="button" aria-label="Настройки оформления" aria-expanded="false"><i class="fas fa-cog"></i></button>
   <div class="style-switcher-main">
-    <h2>style switcher</h2>
-    <div class="style-switcher-item">
-      <p>Theme Color</p>
-      <div class="theme-color">
-        <input type="range" min="0" max="360" class="hue-slider js-hue-slider">
-        <div class="hue">Hue:<span class="js-hue"></span></div>
-      </div>
-    </div>
-    <div class="style-switcher-item">
-      <label class="form-switcher"">
-      <span>Dark Mod</span>
-      <input type="checkbox" class="js-dark-mode">
-      <div class="box"></div>
-    </label>
-    </div>
+    <h2>Оформление</h2>
+    <div class="style-switcher-item"><p>Цвет темы</p><div class="theme-color"><input type="range" min="0" max="360" class="hue-slider js-hue-slider" aria-label="Цвет темы"><div class="hue">Тон: <span class="js-hue"></span></div></div></div>
+    <div class="style-switcher-item"><label class="form-switcher"><span>Тёмная тема</span><input type="checkbox" class="js-dark-mode"><div class="box"></div></label></div>
   </div>
 </div>
-<!-- style switcher end -->
-<script src="js/aos.js"></script>
-<script src="js/main.js"></script>
-<script src="js/style-switcher.js"></script>
+
+<script src="JS/aos.js"></script>
+<script src="JS/config.js"></script>
+<script src="JS/app-data.js"></script>
+<script src="JS/main.js"></script>
+<script src="JS/account.js"></script>
+<script src="JS/style-switcher.js"></script>
 </body>
 </html>

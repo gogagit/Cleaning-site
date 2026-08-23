@@ -1,60 +1,54 @@
-/*style switcher*/
-const styleSwitcherToggle = () =>{
-    const styleSwitcher = document.querySelector(".style-switcher");
-    const styleSwitcherToggler = document.querySelector(".style-switcher-toggler");
-    styleSwitcherToggler.addEventListener("click",function(){
-        styleSwitcher.classList.toggle("open");
-        this.querySelector("i").classList.toggle("fa-times");
-        this.querySelector("i").classList.toggle("fa-cog");
-    })
-}
-styleSwitcherToggle ();
-/*theme color*/
-const themeColor = () => {
+const setupStyleSwitcher = () => {
+    const styleSwitcher = document.querySelector(".js-style-switcher");
+    const toggler = document.querySelector(".js-style-switcher-toggler");
+    if (!styleSwitcher || !toggler) return;
+
+    toggler.addEventListener("click", () => {
+        const isOpen = styleSwitcher.classList.toggle("open");
+        toggler.setAttribute("aria-expanded", String(isOpen));
+        toggler.querySelector("i")?.classList.toggle("fa-times", isOpen);
+        toggler.querySelector("i")?.classList.toggle("fa-cog", !isOpen);
+    });
+};
+
+const setupThemeColor = () => {
     const hueSlider = document.querySelector(".js-hue-slider");
-    const html = document.querySelector("html");
-    const setHue = (value) =>{
-        html.style.setProperty("--hue", value);
-        document.querySelector(".js-hue").innerHTML=value;
-    }
-    hueSlider.addEventListener("input", function(){
-        setHue(this.value);
-        localStorage.setItem("--hue", this.value);
-    })
-    const slider = (value) => {
-        hueSlider.value;
-    }
-    if(localStorage.getItem("--hue") !== null){
-        setHue(localStorage.getItem("--hue"));
-        slider(localStorage.getItem("--hue"));
-    }
-    else {
-        const hue = getComputedStyle(html).getPropertyValue("--hue");
-        setHue(hue);
-        slider(hue.split(" ").join(""));
-    }
-}
-themeColor();
-/*dark mode*/
-const themeLightDark = () => {
-    const darkModeCheckbox = document.querySelector(".js-dark-mode");
-    const themeMode = () =>{
-        if(localStorage.getItem("theme-dark") === "false"){
-            document.body.classList.remove("t-dark");
-        }
-        else {
-            document.body.classList.add("t-dark");
-        }
-    }
-    darkModeCheckbox.addEventListener("click",function(){
-        localStorage.setItem("theme-dark", this.checked);
-        themeMode();
-    })
-    if(localStorage.getItem("theme-dark") !== null){
-        themeMode();
-    }
-    if(document.body.classList.contains("t-dark")){
-        darkModeCheckbox.checked = true;
-    }
-}
-themeLightDark();
+    const hueValue = document.querySelector(".js-hue");
+    if (!hueSlider || !hueValue) return;
+
+    const setHue = (value) => {
+        const normalized = String(value).trim();
+        document.documentElement.style.setProperty("--hue", normalized);
+        hueSlider.value = normalized;
+        hueValue.textContent = normalized;
+    };
+
+    const savedHue = localStorage.getItem("--hue");
+    const defaultHue = getComputedStyle(document.documentElement).getPropertyValue("--hue");
+    setHue(savedHue ?? defaultHue);
+
+    hueSlider.addEventListener("input", () => {
+        setHue(hueSlider.value);
+        localStorage.setItem("--hue", hueSlider.value);
+    });
+};
+
+const setupDarkMode = () => {
+    const checkbox = document.querySelector(".js-dark-mode");
+    if (!checkbox) return;
+
+    const setDarkMode = (enabled) => {
+        document.body.classList.toggle("t-dark", enabled);
+        checkbox.checked = enabled;
+    };
+
+    setDarkMode(localStorage.getItem("theme-dark") === "true");
+    checkbox.addEventListener("change", () => {
+        localStorage.setItem("theme-dark", String(checkbox.checked));
+        setDarkMode(checkbox.checked);
+    });
+};
+
+setupStyleSwitcher();
+setupThemeColor();
+setupDarkMode();

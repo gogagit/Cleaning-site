@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="Рабочий кабинет сотрудника сервиса «Убирайся!»."><title>Кабинет сотрудника — Убирайся!</title>
+  <link type="text/css" rel="stylesheet" href="css/fontawesome.min.css"><link type="text/css" rel="stylesheet" href="css/style-switcher.css"><link type="text/css" rel="stylesheet" href="css/style.css">
+</head>
+<body class="inner-page employee-page" data-page="employee">
+  <header class="inner-header"><div class="container inner-header-content"><a class="inner-logo" href="Index.html">Убирайся! <span>рабочий кабинет</span></a><nav class="inner-nav" aria-label="Навигация сотрудника"><a href="Index.html">На сайт</a><button type="button" class="text-button" id="employeeLogout"><i class="fas fa-sign-out-alt"></i> Выйти</button></nav></div></header>
+  <main class="inner-main"><div class="container">
+    <section class="dashboard-welcome" id="employeeWelcome" hidden>
+      <div><span class="title">Рабочий кабинет</span><h1>План выездов</h1><p>Адреса, время, состав работ и ваш заработок по назначенным заказам.</p></div>
+      <div class="dashboard-user-card"><div class="account-avatar" id="employeeAvatar">С</div><div><strong id="employeeName">Сотрудник</strong><span id="employeeEmail">—</span><small id="employeeMode">Локальный режим</small></div></div>
+    </section>
+    <section class="employee-summary" id="employeeSummary" hidden></section>
+    <section class="finance-note employee-finance-note" id="employeeFinanceNote" hidden><i class="fas fa-wallet"></i><div><strong>Расчёт выплаты</strong><span id="employeeSplit">Сотруднику начисляется 70% от стоимости назначенного заказа. Выполненные заказы входят в сумму к выплате.</span></div></section>
+    <section class="dashboard-section" id="employeeOrdersSection" hidden>
+      <div class="dashboard-section-heading"><div><span class="checkout-kicker">Маршрут</span><h2>Назначенные заказы</h2></div><div class="dashboard-filters"><select class="input-control" id="employeeFilter" aria-label="Фильтр заказов"><option value="active">Активные</option><option value="all">Все</option><option value="completed">Завершённые</option></select><button type="button" class="btn btn-secondary" id="employeeRefresh"><i class="fas fa-sync-alt"></i> Обновить</button></div></div>
+      <div class="employee-orders" id="employeeOrders"></div><p class="form-status" id="employeeStatus" role="status"></p>
+    </section>
+    <section class="guard-card" id="employeeGuard"><i class="fas fa-spinner fa-spin"></i><h2>Проверяем рабочий доступ</h2><p>Эта страница доступна только сотрудникам сервиса.</p></section>
+  </div></main>
+  <div class="style-switcher js-style-switcher"><button class="style-switcher-toggler js-style-switcher-toggler" type="button" aria-label="Настройки оформления" aria-expanded="false"><i class="fas fa-cog"></i></button><div class="style-switcher-main"><h2>Оформление</h2><div class="style-switcher-item"><p>Цвет темы</p><div class="theme-color"><input type="range" min="0" max="360" class="hue-slider js-hue-slider" aria-label="Цвет темы"><div class="hue">Тон: <span class="js-hue"></span></div></div></div><div class="style-switcher-item"><label class="form-switcher"><span>Тёмная тема</span><input type="checkbox" class="js-dark-mode"><div class="box"></div></label></div></div></div>
+  <script src="JS/config.js"></script><script src="JS/app-data.js"></script><script src="JS/employee.js"></script><script src="JS/style-switcher.js"></script>
+</body>
+</html>

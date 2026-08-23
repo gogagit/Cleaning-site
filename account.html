@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Личный кабинет клиента сервиса «Убирайся!»."><title>Личный кабинет — Убирайся!</title>
+  <link type="text/css" rel="stylesheet" href="css/fontawesome.min.css"><link type="text/css" rel="stylesheet" href="css/style-switcher.css"><link type="text/css" rel="stylesheet" href="css/style.css">
+</head>
+<body class="inner-page account-page" data-page="account">
+  <header class="inner-header"><div class="container inner-header-content"><a class="inner-logo" href="Index.html">Убирайся! <span>клининговый сервис</span></a><nav class="inner-nav" aria-label="Навигация кабинета"><a href="Index.html#calculator"><i class="fas fa-plus"></i> Новый заказ</a><button type="button" class="text-button" id="pageLogout"><i class="fas fa-sign-out-alt"></i> Выйти</button></nav></div></header>
+  <main class="inner-main"><div class="container">
+    <section class="dashboard-welcome" id="accountContent" hidden>
+      <div><span class="title">Личный кабинет</span><h1>Здравствуйте, <span id="clientName">клиент</span>!</h1><p>Здесь собраны ваши заказы и их текущие статусы.</p></div>
+      <div class="dashboard-user-card"><div class="account-avatar" id="clientAvatar">К</div><div><strong id="clientFullName">—</strong><span id="clientEmail">—</span><small id="clientMode">Локальный режим</small></div></div>
+    </section>
+    <section class="account-page-summary" id="accountSummary" hidden></section>
+    <section class="dashboard-section" id="ordersSection" hidden>
+      <div class="dashboard-section-heading"><div><span class="checkout-kicker">История</span><h2>Мои заказы</h2></div><button type="button" class="btn btn-secondary" id="refreshClientOrders"><i class="fas fa-sync-alt"></i> Обновить</button></div>
+      <div class="account-page-orders" id="clientOrders"></div><p class="form-status" id="clientStatus" role="status"></p>
+    </section>
+    <section class="dashboard-section support-section" id="supportSection" hidden>
+      <div class="dashboard-section-heading"><div><span class="checkout-kicker">Поддержка</span><h2>Диалоги с администратором</h2><p>Здесь появляются ответы на сообщения из формы «Остались вопросы?».</p></div><a class="btn btn-secondary" href="Index.html#feedback"><i class="far fa-comment-dots"></i> Новое обращение</a></div>
+      <div class="support-threads" id="clientMessages"></div><p class="form-status" id="supportStatus" role="status"></p>
+    </section>
+    <section class="guard-card" id="accountGuard"><i class="fas fa-spinner fa-spin"></i><h2>Открываем личный кабинет</h2><p>Проверяем авторизацию клиента.</p></section>
+  </div></main>
+  <div class="style-switcher js-style-switcher"><button class="style-switcher-toggler js-style-switcher-toggler" type="button" aria-label="Настройки оформления" aria-expanded="false"><i class="fas fa-cog"></i></button><div class="style-switcher-main"><h2>Оформление</h2><div class="style-switcher-item"><p>Цвет темы</p><div class="theme-color"><input type="range" min="0" max="360" class="hue-slider js-hue-slider" aria-label="Цвет темы"><div class="hue">Тон: <span class="js-hue"></span></div></div></div><div class="style-switcher-item"><label class="form-switcher"><span>Тёмная тема</span><input type="checkbox" class="js-dark-mode"><div class="box"></div></label></div></div></div>
+  <script src="JS/config.js"></script><script src="JS/app-data.js"></script><script src="JS/account-page.js"></script><script src="JS/style-switcher.js"></script>
+</body>
+</html>
